@@ -42,6 +42,13 @@ app.icons         #=> [{path:'...', width: 40, height: 40}, ...]
 ipa.cleanup
 ```
 
+It's worth noting that if you get a path to an image in the bundle, it will be crushed with Apple's special PNGCrush. I have a gem to convert them called [pngdefry](https://github.com/soffes/pngdefry). Lagunitas depends on this already to get sizes for the icons. If you want to get a useable PNG out, do something like this:
+
+``` ruby
+icon_path = app.icon(40)
+Pngdefry.defry(iconpath, "output.png")
+```
+
 ## Contributing
 
 1. Fork it
