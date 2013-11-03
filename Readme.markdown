@@ -46,7 +46,7 @@ It's worth noting that if you get a path to an image in the bundle, it will be c
 
 ``` ruby
 icon_path = app.icon(40)
-Pngdefry.defry(iconpath, "output.png")
+Pngdefry.defry(icon_path, "output.png")
 ```
 
 ## Contributing
