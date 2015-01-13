@@ -27,7 +27,7 @@ module Lagunitas
       return if @contents
       @contents = "tmp/lagunitas-#{SecureRandom.hex}"
 
-      Zip::ZipFile.open(@path) do |zip_file|
+      Zip::File.open(@path) do |zip_file|
         zip_file.each do |f|
           f_path = File.join(@contents, f.name)
           FileUtils.mkdir_p(File.dirname(f_path))
