@@ -15,6 +15,10 @@ module Lagunitas
       info['CFBundleIdentifier']
     end
 
+    def bundle_name
+      info['CFBundleName']
+    end
+
     def display_name
       info['CFBundleDisplayName']
     end
