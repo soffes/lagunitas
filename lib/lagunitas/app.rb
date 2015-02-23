@@ -15,6 +15,10 @@ module Lagunitas
       info['CFBundleIdentifier']
     end
 
+    def bundle_name
+      info['CFBundleName']
+    end
+
     def display_name
       info['CFBundleDisplayName']
     end
@@ -42,6 +46,8 @@ module Lagunitas
           icons << get_image("#{name}@2x")
         end
         icons.delete_if { |i| !i }
+      rescue NoMethodError # fix a ipa without icons
+        []
       end
     end
 

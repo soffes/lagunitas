@@ -1,5 +1,6 @@
 require 'zip'
 require 'fileutils'
+require 'securerandom'
 
 module Lagunitas
   class IPA
