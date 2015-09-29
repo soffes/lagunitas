@@ -7,6 +7,10 @@ module Lagunitas
       @path = path
     end
 
+    def path_to_app
+      @path
+    end
+
     def info
       @info ||= CFPropertyList.native_types(CFPropertyList::List.new(file: File.join(@path, 'Info.plist')).value)
     end
