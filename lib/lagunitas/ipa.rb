@@ -6,6 +6,7 @@ module Lagunitas
   class IPA
     def initialize(path)
       @path = path
+      @contents = nil
     end
 
     def app
