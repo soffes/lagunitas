@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubygems'
 require 'bundler'
 Bundler.require :test
@@ -6,10 +8,12 @@ require 'minitest/autorun'
 require 'lagunitas'
 
 # Support files
-Dir["#{File.expand_path(File.dirname(__FILE__))}/support/*.rb"].each do |file|
+Dir["#{__dir__}/support/*.rb"].sort.each do |file|
   require file
 end
 
-class Lagunitas::TestCase < MiniTest::Test
-  include Lagunitas
+module Lagunitas
+  class TestCase < MiniTest::Test
+    include Lagunitas
+  end
 end

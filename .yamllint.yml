@@ -1,0 +1,10 @@
+extends: default
+yaml-files:
+  - '*.yaml'
+  - '*.yml'
+ignore: |
+  /vendor/
+rules:
+  document-start: disable
+  line-length: disable
+  truthy: disable
