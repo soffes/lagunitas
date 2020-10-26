@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 module Lagunitas
@@ -11,7 +13,7 @@ module Lagunitas
     end
 
     def teardown
-      @ipa.cleanup if @ipa
+      @ipa&.cleanup
     end
   end
 end

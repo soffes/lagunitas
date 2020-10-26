@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'zip'
 require 'fileutils'
 require 'securerandom'
 
 module Lagunitas
+  # Representation of an IPA file
   class IPA
     def initialize(path)
       @path = path
@@ -19,6 +22,7 @@ module Lagunitas
 
     def cleanup
       return unless @contents
+
       FileUtils.rm_rf(@contents)
       @contents = nil
     end
@@ -27,6 +31,7 @@ module Lagunitas
 
     def contents
       return if @contents
+
       @contents = "tmp/lagunitas-#{SecureRandom.hex}"
 
       Zip::File.open(@path) do |zip_file|

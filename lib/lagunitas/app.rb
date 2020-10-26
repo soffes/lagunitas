@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require 'cfpropertylist'
 require 'pngdefry'
 
 module Lagunitas
+  # Representation of an app inside an IPA
   class App
     def initialize(path)
       @path = path
@@ -45,7 +48,7 @@ module Lagunitas
           icons << get_image(name)
           icons << get_image("#{name}@2x")
         end
-        icons.delete_if { |i| !i }
+        icons.delete_if(&:!)
       rescue NoMethodError # fix a ipa without icons
         []
       end
