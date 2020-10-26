@@ -3,6 +3,7 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'lagunitas/version'
+require 'english'
 
 Gem::Specification.new do |spec|
   spec.name          = 'lagunitas'
@@ -24,6 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'CFPropertyList'
   spec.add_dependency 'pngdefry', '>= 0.1.0'
+  spec.add_dependency 'rubocop', '>= 0.92.0'
   spec.add_dependency 'rubyzip', '>= 1.0.0'
 
   spec.add_development_dependency 'minitest', '>= 5.0'
