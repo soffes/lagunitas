@@ -32,7 +32,7 @@ module Lagunitas
     def contents
       return if @contents
 
-      @contents = "tmp/lagunitas-#{SecureRandom.hex}"
+      @contents = "tmp/lagunitas-#{::SecureRandom.hex}"
 
       Zip::File.open(@path) do |zip_file|
         zip_file.each do |f|
